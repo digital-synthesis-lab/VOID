@@ -151,4 +151,4 @@ The bibtex for the citation is the following:
 }
 ```
 
-The docker container was provided by Ruoshi Sun, Mohit Shankar, and Chris Paolucci (University of Virginia).
+The docker container was provided by Ruoshi Sun, Mohan Shankar, and Chris Paolucci (University of Virginia).
