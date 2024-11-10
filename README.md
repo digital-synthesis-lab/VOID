@@ -83,7 +83,7 @@ Further examples can be seen in the [examples](examples/README.md) folder.
 ## Installation and usage via Docker
 
 In many machines, the Zeo++ dependency may be challenging to compile and use in combination with VOID.
-To bypass this problem,
+To bypass this problem, you can download and use the Docker container for VOID, as described below.
 
 
 ### Installation
