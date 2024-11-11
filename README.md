@@ -90,7 +90,9 @@ To bypass this problem, you can download and use the Docker container for VOID, 
 
 Firstly, run
 
-`docker pull uvarc/void:1.0.1`
+```bash
+docker pull uvarc/void:1.0.1
+```
 
 in a shell. This command comes from https://hub.docker.com/r/uvarc/void/tags
 
@@ -98,14 +100,18 @@ in a shell. This command comes from https://hub.docker.com/r/uvarc/void/tags
 
 In the shell, run
 
-1. `docker run -it --entrypoint /bin/bash  -v ~/Desktop/void_results:/tmp/void_results uvarc/void:1.0.1`
+```bash
+docker run -it --entrypoint /bin/bash  -v ~/Desktop/void_results:/tmp/void_results uvarc/void:1.0.1
+```
 
 `~/Desktop/void_results` is the local directory to save output files to, but you can change this to whatever you'd like
 `/tmp/void_results` is the container directory that the files are saved to, but you can similarly change this
 
 After running 1. you should now be in a command line prompt. Verify by typing `pwd` which should return `/tmp`. If this is the case, run
 
-2. `dock.py /tmp/VOID/VOID/tests/files/{AFI.cif,molecule.xyz} -o /tmp/void_results -d batch -s voronoi_cluster -f min_distance`
+```bash
+dock.py /tmp/VOID/VOID/tests/files/{AFI.cif,molecule.xyz} -o /tmp/void_results -d batch -s voronoi_cluster -f min_distance
+```
 
 which should create `0000.cif` through `00xx.cif` files and an `args.json` in the container directory you specify (e.g., `/tmp/void_results`) and the local directory you specify (e.g., `~/Desktop/void_results`).
 
@@ -113,17 +119,25 @@ which should create `0000.cif` through `00xx.cif` files and an `args.json` in th
 
 Go to <https://github.com/digital-synthesis-lab/VOID/tree/master/VOID/tests/files> and download both the `AFI.cif` and `molecule.xyz` files then place them in a local directory on your machine.
 
-` docker run -it -v /path/to/local/input:/container/input -v /path/to/local/output:/container/output --entrypoint /bin/bash uvarc/void:1.0.1 `
+```bash
+docker run -it -v /path/to/local/input:/container/input -v /path/to/local/output:/container/output --entrypoint /bin/bash uvarc/void:1.0.1
+```
 
 An example looks like:
 
-`docker run -it -v ~/Desktop/void_inputs:/tmp/void_inputs -v ~/Desktop/void_results:/tmp/void_results --entrypoint /bin/bash uvarc/void:1.0.1`
+```bash
+docker run -it -v ~/Desktop/void_inputs:/tmp/void_inputs -v ~/Desktop/void_results:/tmp/void_results --entrypoint /bin/bash uvarc/void:1.0.1
+```
 
 This creates directories in my container `/tmp/void_inputs` which houses `AFI.cif` and `molecule.xyz` and `/tmp/void_results` which is empty.
 
 Run:
 
-`dock.py /tmp/void_inputs/{AFI.cif,molecule.xyz} -o /tmp/void_results -d batch -s voronoi_cluster -f min_distance` making sure to change container directories to the relevant ones. You should similarly see `0000.cif` - `00xx.cif` along with an `args.json` file created in the local, output directory you've specified.
+```bash
+dock.py /tmp/void_inputs/{AFI.cif,molecule.xyz} -o /tmp/void_results -d batch -s voronoi_cluster -f min_distance
+```
+
+Make sure to change container directories to the relevant ones. You should similarly see `0000.cif` - `00xx.cif` along with an `args.json` file created in the local, output directory you've specified.
 
 ## Nomenclature
 
@@ -132,7 +146,6 @@ The nomenclature of the variables in this software follows (mostly) the [traditi
 ## Acknowledgement
 
 The publication describing the algorithm and the software is the following:
-
 
 D. Schwalbe-Koda and R. Gómez-Bombarelli. _J. Phys. Chem. C_ **125** (5), 3009–3017 (2021). DOI [10.1021/acs.jpcc.0c10108](https://doi.org/10.1021/acs.jpcc.0c10108)
 
