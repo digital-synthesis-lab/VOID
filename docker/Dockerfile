@@ -26,7 +26,7 @@ RUN cd zeoplusplus/cython_wrapper && \
            setup_alt.py && \
     /opt/conda/bin/python setup_alt.py develop
 
-RUN git clone https://github.com/learningmatter-mit/VOID.git
+RUN git clone https://github.com/digital-synthesis-lab/VOID.git
 RUN cd VOID && /opt/conda/bin/pip install --no-cache-dir .
 
 USER $MAMBA_USER
